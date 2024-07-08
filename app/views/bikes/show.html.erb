@@ -1,0 +1,11 @@
+<h1> <%= @bike.description %></h1>
+
+<% @bookings.each do |booking| %>
+  <div>
+    <p>Réservation du <%= booking.start_date %> au <%= booking.end_date %></p>
+    <%= link_to "supprimer le booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "are you sure ?"} %>
+  </div>
+<% end %>
+
+<%= link_to "Supprimer ce vélo", bike_path(@bike), data: {  turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer ce vélo ?" } %>
+<%= link_to "réserver ce vélo", new_bike_booking_path(@bike) %>

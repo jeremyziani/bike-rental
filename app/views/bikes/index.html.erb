@@ -1,0 +1,22 @@
+
+<div class="container">
+  <h1>Vélo à louer</h1>
+    <div class="bikes-grid">
+  <% @bikes.each do |bike| %>
+    <%= link_to bike_path(bike) do %>
+      <div class="card-product">
+        <% if bike.image.attached? %>
+          <%= image_tag url_for(bike.image), class: "bike-image" %>
+        <% else %>
+          <img src="https://example.com/default-image.jpg" />
+        <% end %>
+        <div class="card-product-infos">
+          <h2><%= bike.name %></h2>
+          <p><%= bike.description %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+  <%= link_to "Ajouter un vélo", new_bike_path %>
+</div>

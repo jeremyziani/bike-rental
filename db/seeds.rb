@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+User.create!(email: "jeje@gmail.com", password: "123456")
+
+Bike.destroy_all
+
+Bike.create!(name: "XXX01", description: "Vélo de course", user_id: User.first.id)
+Bike.create!(name: "XXX02", description: "Vélo de ville", user_id: User.first.id)
+Bike.create!(name: "XXX03", description: "Vélo de montagne", user_id: User.first.id)
+Bike.create!(name: "XXX04", description: "Vélo de course", user_id: User.first.id)
+Bike.create!(name: "XXX05", description: "Vélo de ville", user_id: User.first.id)
